@@ -13,7 +13,7 @@ import javax.persistence.*
                                                     UniqueConstraint(name = "T_USER_EMAIL_UNIQUE", columnNames = arrayOf("email"))))
 @DynamicUpdate
 @EqualsAndHashCode(callSuper = true)
-@Where(clause = "DELETED = '0' and ACTIVE='YES'")
+@Where(clause = "DELETED = '0'")
 class User : AbstractEntity() {
     var userName: String? = null
     var email: String? = null
