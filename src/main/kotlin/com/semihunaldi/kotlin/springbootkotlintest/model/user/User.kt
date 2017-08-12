@@ -1,5 +1,6 @@
 package com.semihunaldi.kotlin.springbootkotlintest.model.user
 
+import com.semihunaldi.kotlin.springbootkotlintest.model.AbstractEntity
 import lombok.Data
 import lombok.EqualsAndHashCode
 import org.hibernate.annotations.DynamicUpdate
@@ -13,10 +14,7 @@ import javax.persistence.*
 @DynamicUpdate
 @EqualsAndHashCode(callSuper = true)
 @Where(clause = "DELETED = '0' and ACTIVE='YES'")
-class User
-(
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Long = 0,
-    var userName : String,
-    var email : String
-)
+class User : AbstractEntity() {
+    var userName: String? = null
+    var email: String? = null
+}
